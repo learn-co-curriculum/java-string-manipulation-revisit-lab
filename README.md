@@ -4,6 +4,14 @@
 
 - Practice using the classes in `java.util.regex`.
 
+## Introduction
+
+In this lab, we will practice using the `Pattern` and `Matcher` classes to find
+patterns in given `String` objects.
+
+Fork and clone this repository. When you do, you will see a `WithoutE` class and
+a `WithoutETest` for unit testing.
+
 ## Instructions
 
 The letter e is the most common letter in the English Dictionary. What would the
@@ -49,12 +57,16 @@ Follow the given instructions and tips:
   - This should be case-insensitive, meaning you should count all uppercase and
     lower case Es and es in a given input.
   - Return the number of times the letter e appeared.
+  - Remove the `@Disabled` annotation from the `findETest()` method in the unit
+    test and run the test. Ensure it passes.
 - If the letter e appears in the user's input, replace the user's input without
   the letter e.
   - Replace all letter es found in the given `String` object with a space.
   - This should be case-insensitive, meaning you should replace all uppercase
     and lower case Es and es in a given input.
   - Return the `String` object with the letter e replaced.
+  - Remove the `@Disabled` annotation from the `withoutETest()` method in the
+    unit test and run the test. Ensure it passes.
 - Use the methods from the `Matcher` class and the `String` class to help you.
 
 ## Example Output
