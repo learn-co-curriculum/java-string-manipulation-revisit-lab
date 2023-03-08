@@ -2,30 +2,114 @@
 
 ## Learning Goals
 
-- Learning Goal 1
-- Learning Goal 2
+- Practice using the classes in `java.util.regex`.
 
 ## Introduction
 
-A 1-2 sentence summary of what will be covered.
+In this lab, we will practice using the `Pattern` and `Matcher` classes to find
+patterns in given `String` objects.
+
+Fork and clone this repository. When you do, you will see a `WithoutE` class and
+a `WithoutETest` for unit testing.
 
 ## Instructions
 
-Walk the student through any setup required to run the lesson (i.e.
-`npm install` and `npm start`).
+The letter e is the most common letter in the English Dictionary. What would the
+English language look like without the letter e?
 
-## Deliverables
+Consider the following starter code:
 
-List each of the deliverables the student must complete in order to finish the
-lab. Provide as much context as possible, including instructions on how to run
-the tests and other means of validating successful completion of deliverables.
+```java
+import java.util.Scanner;
 
-## Conclusion
+public class WithoutE {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter in a sentence:");
+        String input = scanner.nextLine();
 
-A short one or two paragraph summary of the contents of the lessons, recapping
-the learning goals.
+        int numberOfEs = findE(input);
+        
+        if (numberOfEs > 0) {
+            String noE = withoutE(input);
+            System.out.println("The letter e appeared " + numberOfEs + " times.");
+            System.out.println("Here is that sentence without the letter e: " + noE);
+            
+        } else {
+            System.out.println("The letter e was not in the given sentence.");
+        }
+    }
+
+    public static int findE(String input) {
+        // Write your code here!
+    }
+
+    public static String withoutE(String input) {
+        // Write your code here!
+    }
+}
+```
+
+In the above code, we want to know if the letter e appears in the user's input.
+Follow the given instructions and tips:
+
+- Find the number of times the letter e appears in the user's input.
+  - This should be case-insensitive, meaning you should count all uppercase and
+    lower case Es and es in a given input.
+  - Return the number of times the letter e appeared.
+  - Remove the `@Disabled` annotation from the `findETest()` method in the unit
+    test and run the test. Ensure it passes.
+- If the letter e appears in the user's input, replace the user's input without
+  the letter e.
+  - Replace all letter es found in the given `String` object with a space.
+  - This should be case-insensitive, meaning you should replace all uppercase
+    and lower case Es and es in a given input.
+  - Return the `String` object with the letter e replaced.
+  - Remove the `@Disabled` annotation from the `withoutETest()` method in the
+    unit test and run the test. Ensure it passes.
+- Use the methods from the `Matcher` class and the `String` class to help you.
+
+## Example Output
+
+Here are some example runs of the code for your reference. Make sure your output
+looks the same when given these values. Also, don't forget to use Regex 101 to
+help you when needed!
+
+Example Output 1:
+
+```text
+Enter in a sentence:
+It's as hard as napping without a pillow.
+The letter e was not in the given sentence.
+```
+
+Example Output 2:
+
+```text
+Enter in a sentence:
+Easy peasy lemon squeezy
+The letter e appeared 5 times.
+Here is that sentence without the letter e:  asy p asy l mon squ  zy
+```
+
+Example Output 3:
+
+```text
+Enter in a sentence:
+Dreams don't work unless you do
+The letter e appeared 2 times.
+Here is that sentence without the letter e: Dr ams don't work unl ss you do
+```
+
+Example Output 4:
+
+```text
+Enter in a sentence:
+EeeEeeEeek!
+The letter e appeared 9 times.
+Here is that sentence without the letter e:          k!
+```
 
 ## Resources
 
-- [Resource Link 1](example.com)
-- [Resource Link 2](example.com)
+- [Regex 101](https://regex101.com)
